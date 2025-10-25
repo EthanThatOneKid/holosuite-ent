@@ -78,15 +78,15 @@ export default function Home() {
     setCurrentImage(null);
 
     try {
-        const newImage = await generateImage(generationPrompt);
-        setOriginalImage(newImage);
-        setCurrentImage(newImage);
-        setGenerationPrompt('');
+      const newImage = await generateImage(generationPrompt);
+      setOriginalImage(newImage);
+      setCurrentImage(newImage);
+      setGenerationPrompt('');
     } catch (err: any) {
-        setError(`Image generation failed: ${err.message}`);
-        console.error(err);
+      setError(`Image generation failed: ${err.message}`);
+      console.error(err);
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -159,17 +159,17 @@ export default function Home() {
     setCurrentImage(null);
     setVideoUrl(null);
     setError(null);
-    if(fileInputRef.current) fileInputRef.current.value = "";
+    if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
   return (
     <div className="min-h-screen bg-base-200">
-      {showApiKeyModal && <ApiKeyModal onSelectKey={handleSelectKey} isSelectionInProgress={isSelectingKey}/>}
+      {showApiKeyModal && <ApiKeyModal onSelectKey={handleSelectKey} isSelectionInProgress={isSelectingKey} />}
 
       {/* Header */}
       <div className="navbar bg-base-100 shadow-lg">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Experience Generator</a>
+          <a className="btn btn-ghost text-xl">Holosuite</a>
         </div>
         {currentImage && (
           <div className="flex-none">
